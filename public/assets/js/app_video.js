@@ -3,7 +3,7 @@ let connection = new TikTokIOConnection(undefined);
 let gameWords = [];
 let gamegameSelectedWord = null;
 let gameTimer = null;
-let gameStatus = false;
+let gameStatus = true;
 
 // Config
 let confComment = false;
@@ -36,16 +36,18 @@ $(document).ready(() => {
         resizeContainer();
     });
 
-    // Connect
-    $("#targetConnect").click(function(e) {
-        // Check
-        if (gameStatus) {
-            let targetLive = $("#targetUsername").val();
-            localStorage.setItem("live_username",targetLive)
+    function connect_live_auto(){
+        let targetLive = localStorage.getItem("live_username")
+        if (targetLive) {
             connect(targetLive);
         } else {
             alert("Start game first!");
         }
+    }
+    // Connect
+    $("#targetConnect").click(function(e) {
+        // Check
+        connect_live_auto();
         
     });
 
@@ -77,6 +79,8 @@ $(document).ready(() => {
     $("#btnSave").click(function(e) {
         loadSetting();
     });
+
+    connect_live_auto();
 })
 
 /*
@@ -210,14 +214,10 @@ function checkWinner(data, msg) {
 
 function loadSetting() {
     // Load
-    confComment = $("#confComment").prop('checked');
-    localStorage.setItem("confComment",confComment);
-    confLike = $("#confLike").prop('checked');
-    localStorage.setItem("confLike",confLike);
-    confShare = $("#confShare").prop('checked');
-    localStorage.setItem("confShare",confShare);
-    confJoin = $("#confJoin").prop('checked');
-    localStorage.setItem("confJoin",confJoin);
+    confComment = localStorage.getItem("confComment");// $("#confComment").prop('checked');
+    confLike = localStorage.getItem("confLike");//$("#confLike").prop('checked');
+    confShare = localStorage.getItem("confShare");//$("#confShare").prop('checked');
+    confJoin = localStorage.getItem("confJoin");//$("#confJoin").prop('checked');
 }
 
 /*
