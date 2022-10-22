@@ -25,9 +25,11 @@ $(document).ready(() => {
 
         // Paper
         if (window.innerWidth >= 1366) {
-            var paperHeight = $("#paperContainer").outerHeight() - 20;
+            var paperHeight = $("#paperContainer").outerHeight() - 150;
+
         } else {
             var paperHeight = $("#paperContainer").outerHeight() + 7;
+
         }
         $("#paper").outerHeight(paperHeight);
     }
@@ -59,7 +61,7 @@ $(document).ready(() => {
         speakTTS(MSG_TEST);
 
         // Populate dummy
-        for (let i = 0; i < 30; i++) {
+        for (let i = 0; i < 5; i++) {
             addContent("<div style='text-align:center;'>Welcome 🥳🥳🥳</div>");
         }
 
