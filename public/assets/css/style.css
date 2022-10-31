@@ -2,7 +2,7 @@
 	outline: 2px solid red;
 }
 .main {
-	background-color: #ccc;
+	background-color: rgb(255, 255, 255);
 }
 .main .info {
 	position: absolute;
@@ -11,7 +11,7 @@
 	padding: 1rem;
 }
 .main .container {
-	background-color: #fff;
+	background-color: rgb(255, 255, 255);
 	width: 360px;
 	height: 100vh;
 	margin: auto;
@@ -41,27 +41,30 @@
 	height: 100%;
 }
 .printer .paper {
-	width: 60%;
-	margin: auto;
-	transform: perspective(500px) rotateX(12deg);
-	margin-top: -9%;
-	filter: grayscale(1);
-	overflow-y: hidden;
-	overflow-x: hidden;
+	width: 250px;
+	height: 3x !important;
+    align-content: center;
+    margin: auto;
+    transform: perspective(500px) rotateX(12deg);
+    margin-top: 175px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+
 }
 .printer .item {
-	border-top: 2px dashed black;
+	border-top: 1.5px dashed rgb(255, 255, 255);
 	overflow-wrap: break-word !important;
 	word-break: break-all !important;
 }
 .bottom-container {
-	height: 32%;
+	
+	height: 50%;
 }
 .bottom-container .bottom-wrapper {
-	padding: 2rem;
+	padding: 0rem;
 }
 .bottom-container .bottom-wrapper .bottom-bar {
-	background: #fff;
+	background: #000;
 	border-radius: 0.5rem;
 	width: 100%;
 	height: 100%;
@@ -82,15 +85,15 @@
 	font-weight: bold;
 	padding: .5rem .75rem;
 	text-align: center;
-	font-size: 1.7rem;
-	color: #e53935;
+	font-size: 8px;
+	color: #ffffff;
 	border-radius: 5px;
-	border: 2px solid #e53935;
+	border: 2px solid #dbff00;
 	text-transform: uppercase;
 }
 .text-winner {
 	font-weight: bold;
-	color: #512da8;
+	color: #dbff00;
 	margin-top: .25rem;
 	overflow-wrap: break-word !important;
 	word-break: break-all !important;
@@ -109,8 +112,9 @@
 	margin-bottom: 1rem;
 }
 .printer .item {
-	font-size: 1.1rem;
-	padding: 1rem .5rem;
+	font-size: .8rem;
+	padding: .75rem .5rem;
+	color:#ffffff;
 }
 @media only screen and (min-width: 1400px) {
 	.text-caption {
@@ -119,11 +123,11 @@
 		margin-bottom: 2rem;
 	}
 	.text-guess {
-		font-size: 2.3rem;
+		font-size: 1.3rem;
 	}
 	.printer .item {
-		font-size: 1.4rem;
-		padding: 1.5rem .75rem;
+		font-size: 1.2rem;
+		padding: .75rem .75rem;
 	}
 }
 .animation {
